@@ -1,0 +1,24 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cho",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^4.4.2",
+    "date-utils": "^1.2.21",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "log4js": "^6.9.1",
+    "memorystore": "^1.6.7",
+    "morgan": "^1.10.0",
+    "vue-chartjs": "^5.3.1",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}
