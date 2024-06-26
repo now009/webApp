@@ -1,0 +1,42 @@
+
+spring:
+  redis:
+    cluster:
+      nodes: 127.0.01:6379
+  session:
+    store-type: redis
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_oauth2
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    open-in-view: true
+  devtools:
+    add-properties: false
+
+security:
+  oauth2:
+    jwt:
+      signkey: 123@#$
+
+server:
+  port: 9000
+  servlet:
+    session:
+      timeout: 43200m      # 60m * 24h * 30d
+      cookie:
+        max-age: 43200m    # 60m * 24h * 30d
+        name: AUTHSID
+        http-only: true
+        # secure: true
+
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO
+        security: INFO

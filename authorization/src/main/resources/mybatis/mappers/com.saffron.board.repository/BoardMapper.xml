@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.saffron.board.repository.BoardMapper">
+   <select id="selectBoardList"  resultType="com.saffron.board.vo.BoardVo">
+		SELECT 
+			 BRD_IDX ,USER_ID ,USER_NAME ,USER_EMAIL ,SUBJECT ,CONTENT ,DEL_YN
+			 ,TO_CHAR(CREATE_DT,'YYYYMMDDHH24MISS') AS CREATE_DT
+			 ,CREATE_USER 
+			 ,TO_CHAR(MODIFY_DT,'YYYYMMDDHH24MISS') AS MODIFY_DT
+			 ,MODIF_USER
+		FROM BOARD
+		WHERE DEL_YN = 'N'
+   </select>
+</mapper>
